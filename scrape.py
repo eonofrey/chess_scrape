@@ -152,25 +152,34 @@ def grab_extras(link = None):
     # Pass over to BS4
     bsObj = BeautifulSoup(driver.page_source, 'lxml')
 
-    # Get opponent stats
+    # Get top player stats
     top_player = bsObj.findAll('div', attrs={'id': "topPlayer"})
-    opponent_elo = top_player[0].find('span', {'class':'user-rating'}).getText()
-    opponent_country = top_player[0].findAll('span', {'class', re.compile('country')})[0].get('tip')
+    top_elo = top_player[0].find('span', {'class':'user-rating'}).getText()
+    top_country = top_player[0].findAll('span', {'class', re.compile('country')})[0].get('tip')
+    top_name = top_player[0].find('a', {'class':'username'}).getText().strip()     
 
-    # Get my stats
+    # Get bottom player stats
     bottom_player = bsObj.findAll('div', attrs={'id': "bottomPlayer"})
-    my_elo = bottom_player[0].find('span', {'class':'user-rating'}).getText()
+    bottom_elo = bottom_player[0].find('span', {'class':'user-rating'}).getText()
+    bottom_name = bottom_player[0].find('a', {'class':'username'}).getText().strip()   
+    bottom_country = bottom_player[0].findAll('span', {'class', re.compile('country')})[0].get('tip')
 
     # Get game stats
     game_info = bsObj.findAll('li', attrs={'class': "game-info-item"})
     game_result = game_info[0].getText()
     game_time = game_info[1].getText().strip()
-
-
-    driver.close()
-
-    return [opponent_elo, opponent_country, game_result, game_time, my_elo]
-
+    
+    # Clean
+    bottom_elo = bottom_elo.replace("(", "")
+    bottom_elo = bottom_elo.replace(")", "")
+    top_elo = top_elo.replace("(", "")
+    top_elo = top_elo.replace(")", "")
+    
+    # Logic 
+    if top_name == 'eono619':
+        return [int(top_elo), top_country, top_name, int(bottom_elo), bottom_name, bottom_country]
+    else:
+        return [int(bottom_elo), bottom_name, bottom_country, int(top_elo), top_country, top_name]
 
 
 chess_data.head(20)
