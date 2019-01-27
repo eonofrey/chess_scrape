@@ -145,4 +145,32 @@ chess_data = pd.DataFrame(
      'Link': links_container 
     })
 
+#################### Grabbing Individual Game Stats ####################
+def grab_extras(link = None):
+    driver.get(link)
+
+    # Pass over to BS4
+    bsObj = BeautifulSoup(driver.page_source, 'lxml')
+
+    # Get opponent stats
+    top_player = bsObj.findAll('div', attrs={'id': "topPlayer"})
+    opponent_elo = top_player[0].find('span', {'class':'user-rating'}).getText()
+    opponent_country = top_player[0].findAll('span', {'class', re.compile('country')})[0].get('tip')
+
+    # Get my stats
+    bottom_player = bsObj.findAll('div', attrs={'id': "bottomPlayer"})
+    my_elo = bottom_player[0].find('span', {'class':'user-rating'}).getText()
+
+    # Get game stats
+    game_info = bsObj.findAll('li', attrs={'class': "game-info-item"})
+    game_result = game_info[0].getText()
+    game_time = game_info[1].getText().strip()
+
+
+    driver.close()
+
+    return [opponent_elo, opponent_country, game_result, game_time, my_elo]
+
+
+
 chess_data.head(20)
