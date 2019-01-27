@@ -26,32 +26,40 @@ driver.find_element_by_xpath('//*[@id="username"]').send_keys("eonofrey@gmail.co
 driver.find_element_by_xpath('//*[@id="password"]').send_keys(password)
 driver.find_element_by_xpath('//*[@id="login"]').click()
 
-time.sleep(1)
+def pull_results(link = None):
+    # Grab link 
+    driver.get(link)
+    
+    # Pass over to BS4
+    bsObj = BeautifulSoup(driver.page_source, 'lxml')
 
-links = []
-for page_num in list(range(1,12)):
-    link = """https://www.chess.com/games/archive?gameOwner=my_game&gameTypes%5B0%5D
-    =lightning&gameTypes%5B1%5D=bullet&gameTypes%5B2%5D=blitz&gameTypes%5B3%5D
-    =standard&gameTypes%5B4%5D=liveChess960&gameTypes%5B5%5D=
-    bughouse&gameTypes%5B6%5D=threecheck&gameTypes%5B7%5D=crazyhouse&gameTypes%5B8%5D
-    =kingofthehill&gameTypes%5B9%5D=rapid&gameType=live&page=""" + str(page_num)
+    results = []
+    # Grab all the games
+    for result in bsObj.findAll('i', attrs={'class': re.compile("icon-square")}):
+        results.append(result.get('tip'))
 
+    return results
 
+def pull_moves(link = None):  
+    # Grab link
     driver.get(link)
 
     # Pass over to BS4
     bsObj = BeautifulSoup(driver.page_source, 'lxml')
 
-
+    moves = []
     # Grab all the games
-    for link in bsObj.findAll('a', attrs={'href': re.compile("https://www.chess.com/live/game")}):
-        links.append(link.get('href'))
-
-    #print(BeautifulSoup(driver.page_source, 'lxml').prettify)
-
-
-time.sleep(5)
-driver.close()
+    for move in bsObj.findAll('a', attrs={'class': "clickable-link text-middle moves"}):
+        moves.append(move.getText())
+    
+    # Empty container
+    clean_moves = []
+    
+    # Clean 
+    for move in moves:
+        clean_moves.append(move.strip())
+    
+    return clean_moves
 
 # Remove Duplicates
 def remove(duplicate): 
@@ -61,8 +69,47 @@ def remove(duplicate):
             final_list.append(num) 
     return final_list 
 
-links = remove(links)
 
-# Print Links
-for i in links:
-    print(i)
+def pull_links(link = None):
+    # Grab link
+    driver.get(link)
+    
+    # Empty container
+    links = []
+    
+    # Pass over to BS4
+    bsObj = BeautifulSoup(driver.page_source, 'lxml')
+
+    # Grab all the games
+    for link in bsObj.findAll('a', attrs={'href': re.compile("https://www.chess.com/live/game")}):
+        links.append(link.get('href'))
+    
+    # Dedup
+    links = remove(links)
+    
+    return links
+
+def pull_dates(link = None):
+    # Grab link
+    driver.get(link)
+
+    # Pass over to BS4
+    bsObj = BeautifulSoup(driver.page_source, 'lxml')
+    
+    # Empty container
+    dates = []
+    
+    # Grab all the games
+    for date in bsObj.findAll('a', attrs={'class': "clickable-link archive-date"}):
+        dates.append(date.getText())
+    
+    # Empty container
+    clean_dates = []
+    
+    # Strip away the rest
+    for date in dates:
+        clean_dates.append(date.strip())
+    
+    return clean_dates
+
+
