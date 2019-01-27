@@ -182,4 +182,12 @@ def grab_extras(link = None):
         return [int(bottom_elo), bottom_name, bottom_country, int(top_elo), top_country, top_name]
 
 
-chess_data.head(20)
+
+row_list = []
+
+for row in chess_data['Link']:
+    row_list.append(grab_extras(row))
+
+col_list = ['my_elo', 'my_user', 'my_country', 'opponent_elo', 'opponent_user', 'opponent_country']
+
+game_stats = pd.DataFrame(row_list, columns=col_list)
