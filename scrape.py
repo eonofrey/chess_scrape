@@ -182,12 +182,15 @@ def grab_extras(link = None):
         return [int(bottom_elo), bottom_name, bottom_country, int(top_elo), top_country, top_name]
 
 
-
+# Make container and Loop
 row_list = []
-
 for row in chess_data['Link']:
     row_list.append(grab_extras(row))
 
+# Convert to a dataframe   
 col_list = ['my_elo', 'my_user', 'my_country', 'opponent_elo', 'opponent_user', 'opponent_country']
-
 game_stats = pd.DataFrame(row_list, columns=col_list)
+
+# Combine all data
+chess_data_total = pd.concat([chess_data, game_stats], axis=1)
+chess_data_total.head()
