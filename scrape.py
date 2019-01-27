@@ -136,3 +136,13 @@ for page_num in list(range(1,12)):
     
 time.sleep(3)
 driver.close() 
+
+#################### Clean & Structure ####################
+chess_data = pd.DataFrame(
+    {'Date': dates_container,
+     'Result': results_container,
+     'Moves': moves_container,
+     'Link': links_container 
+    })
+
+chess_data.head(20)
