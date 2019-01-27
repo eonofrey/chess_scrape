@@ -177,10 +177,10 @@ def grab_extras(link = None):
     
     # Logic 
     if top_name == 'eono619':
-        return [int(top_elo), top_country, top_name, int(bottom_elo), bottom_name, bottom_country]
+        return [int(top_elo), top_name, top_country, int(bottom_elo), bottom_name, bottom_country, game_result, game_time]
     else:
-        return [int(bottom_elo), bottom_name, bottom_country, int(top_elo), top_country, top_name]
-
+        return [int(bottom_elo), bottom_name, bottom_country, int(top_elo), top_name, top_country, game_result, game_time]
+    
 
 # Make container and Loop
 row_list = []
@@ -194,3 +194,15 @@ game_stats = pd.DataFrame(row_list, columns=col_list)
 # Combine all data
 chess_data_total = pd.concat([chess_data, game_stats], axis=1)
 chess_data_total.head()
+
+# Analyze
+
+chess_data_total["Moves"] = pd.to_numeric(chess_data_total["Moves"])
+#chess_data_total["Date"] = pd.to_datetime([chess_data_total["Date"]])#, format="%m/%d/%Y")
+
+chess_data_total.dtypes
+
+import matplotlib.pyplot as plt
+
+plt.plot(chess_data_total['my_elo'][50:])
+plt.show()
