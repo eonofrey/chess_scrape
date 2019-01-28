@@ -200,14 +200,17 @@ game_stats = pd.DataFrame(row_list, columns=col_list)
 chess_data_total = pd.concat([chess_data, game_stats], axis=1)
 chess_data_total.head()
 
-#################### Analyze and Plot ####################
-
+# Covert types and re-index 
 chess_data_total["Moves"] = pd.to_numeric(chess_data_total["Moves"])
 #chess_data_total["Date"] = pd.to_datetime([chess_data_total["Date"]])#, format="%m/%d/%Y")
 
 chess_data_total.dtypes
+chess_data_total.reset_index(drop=True, inplace=True)
 
+# Save down a copy 
+chess_data_total.to_csv()
 
+#################### Analyze and Plot ####################
 sns.set_style("white")
 sns.set_context('talk')
 
