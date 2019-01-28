@@ -205,6 +205,9 @@ chess_data_total["Moves"] = pd.to_numeric(chess_data_total["Moves"])
 #chess_data_total["Date"] = pd.to_datetime([chess_data_total["Date"]])#, format="%m/%d/%Y")
 
 chess_data_total.dtypes
+
+# Reverse and reset index
+chess_data_total = chess_data_total.iloc[::-1]
 chess_data_total.reset_index(drop=True, inplace=True)
 
 # Save down a copy 
