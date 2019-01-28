@@ -7,6 +7,9 @@ import selenium
 from selenium import webdriver
 import time
 import getpass
+import matplotlib.pyplot as plt
+import seaborn as sns
+
 
 #################### Define Functions ####################
 def pull_results(link = None):
@@ -186,22 +189,31 @@ row_list = []
 for row in chess_data['Link']:
     row_list.append(grab_extras(row))
 
+# Close the driver    
+driver.close()
+
 # Convert to a dataframe   
-col_list = ['my_elo', 'my_user', 'my_country', 'opponent_elo', 'opponent_user', 'opponent_country']
+col_list = ['my_elo', 'my_user', 'my_country', 'opponent_elo', 'opponent_user', 'opponent_country', 'game_result', 'game_time']
 game_stats = pd.DataFrame(row_list, columns=col_list)
 
 # Combine all data
 chess_data_total = pd.concat([chess_data, game_stats], axis=1)
 chess_data_total.head()
 
-# Analyze
+#################### Analyze and Plot ####################
 
 chess_data_total["Moves"] = pd.to_numeric(chess_data_total["Moves"])
 #chess_data_total["Date"] = pd.to_datetime([chess_data_total["Date"]])#, format="%m/%d/%Y")
 
 chess_data_total.dtypes
 
-import matplotlib.pyplot as plt
 
-plt.plot(chess_data_total['my_elo'][50:])
+sns.set_style("white")
+sns.set_context('talk')
+
+plt.plot(chess_data_total['my_elo'][40:])
+
+plt.xlabel('Number of Games', fontsize=18)
+plt.ylabel('ELO', fontsize=16)
+
 plt.show()
