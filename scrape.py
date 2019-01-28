@@ -135,7 +135,6 @@ for page_num in list(range(1,12)):
     dates_container = dates_container + pull_dates(link)
     
 time.sleep(3)
-driver.close() 
 
 #################### Clean & Structure ####################
 chess_data = pd.DataFrame(
