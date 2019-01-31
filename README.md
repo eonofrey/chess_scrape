@@ -12,7 +12,7 @@ First the scraper starts by logging into the site. It enters my username and pas
 
 Next, it navigates to the archive of every game I've played stored in a table shown below. I scrape the boxed data on the page, and iterate through every page in my history. In additon to that, it also grabs the link for every individual game, which I will then use to grab even more detials. 
 
-<img width="500" alt="screen shot 2019-01-30 at 10 27 07 pm" src="https://user-images.githubusercontent.com/38504767/52028768-4629e080-24de-11e9-98de-bf567280cae8.png">
+<img width="400" alt="screen shot 2019-01-30 at 10 27 07 pm" src="https://user-images.githubusercontent.com/38504767/52028768-4629e080-24de-11e9-98de-bf567280cae8.png">
 
 At this point I have a very clean dataframe with the date, link, moves, and result of every game I've played (below)
 
@@ -26,4 +26,11 @@ The next step is to iterate through the "Link" column and actually go into every
 
 Originally I ran the scrape assuming I was always the bottom player because that's how it always appears to me on the site's interface. However, on the backend it's totally random who is the top player and who is the bottom player so I had to apply some logic to make sure the data flowed in properly from the scrape. 
 
-<img width="852" alt="screen shot 2019-01-30 at 10 43 53 pm" src="https://user-images.githubusercontent.com/38504767/52029293-9b66f180-24e0-11e9-98e0-4de8c900b22a.png">
+<img width="400" alt="screen shot 2019-01-30 at 10 43 53 pm" src="https://user-images.githubusercontent.com/38504767/52029293-9b66f180-24e0-11e9-98e0-4de8c900b22a.png">
+
+And the result is a datafrae that looks like the one shown below. I concatenate this to the previous dataframe to get my full dataset on my chess games. 
+
+<img width="600" alt="screen shot 2019-01-30 at 10 51 50 pm" src="https://user-images.githubusercontent.com/38504767/52029560-b0905000-24e1-11e9-8eaf-ad5df9737783.png">
+
+
+
