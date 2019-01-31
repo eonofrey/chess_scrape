@@ -14,5 +14,8 @@ Next, it navigates to the archive of every game I've played stored in a table sh
 
 <img width="500" alt="screen shot 2019-01-30 at 10 27 07 pm" src="https://user-images.githubusercontent.com/38504767/52028768-4629e080-24de-11e9-98de-bf567280cae8.png">
 
+At this point I have a very clean dataframe with the date, link, moves, and result of every game I've played (below)
 
-Once I have the result, moves, and date of every game, I move onto the individual games themselves. 
+<img width="400" alt="screen shot 2019-01-30 at 10 35 10 pm" src="https://user-images.githubusercontent.com/38504767/52028995-5c846c00-24df-11e9-90e6-cc2257ad24bf.png">
+
+The next step is to iterate through the "Link" column and actually go into every individual chess game to get even more details. 
