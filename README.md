@@ -18,4 +18,12 @@ At this point I have a very clean dataframe with the date, link, moves, and resu
 
 <img width="400" alt="screen shot 2019-01-30 at 10 35 10 pm" src="https://user-images.githubusercontent.com/38504767/52028995-5c846c00-24df-11e9-90e6-cc2257ad24bf.png">
 
-The next step is to iterate through the "Link" column and actually go into every individual chess game to get even more details. 
+The next step is to iterate through the "Link" column and actually go into every individual chess game to get even more details. The individual games look like the screenshot below. On this page I scrape:
+
+1. The name, elo, and country of the top player (red)
+2. How the game concluded (timeout, resignation, checkmate, draw...) and the time of the game (purple)
+3. The name, elo, and country of the bottom player (blue)
+
+Originally I ran the scrape assuming I was always the bottom player because that's how it always appears to me on the site's interface. However, on the backend it's totally random who is the top player and who is the bottom player so I had to apply some logic to make sure the data flowed in properly from the scrape. 
+
+<img width="852" alt="screen shot 2019-01-30 at 10 43 53 pm" src="https://user-images.githubusercontent.com/38504767/52029293-9b66f180-24e0-11e9-98e0-4de8c900b22a.png">
