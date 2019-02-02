@@ -126,13 +126,3 @@ chess_data_total.reset_index(drop=True, inplace=True)
 # Save down a copy 
 chess_data_total.to_csv()
 
-#################### Analyze and Plot ####################
-sns.set_style("white")
-sns.set_context('talk')
-
-plt.plot(chess_data_total['my_elo'][40:])
-
-plt.xlabel('Number of Games', fontsize=18)
-plt.ylabel('ELO', fontsize=16)
-
-plt.show()
