@@ -124,5 +124,5 @@ chess_data_total = chess_data_total.iloc[::-1]
 chess_data_total.reset_index(drop=True, inplace=True)
 
 # Save down a copy 
-chess_data_total.to_csv()
+chess_data_total.to_csv(path_or_buf = "/Users/Eric/Desktop/chess scrape/chess_scrape_data.csv")
 
