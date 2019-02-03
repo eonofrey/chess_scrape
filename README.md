@@ -33,4 +33,19 @@ And the result is a datafrae that looks like the one shown below. I concatenate 
 <img width="600" alt="screen shot 2019-01-30 at 10 51 50 pm" src="https://user-images.githubusercontent.com/38504767/52029560-b0905000-24e1-11e9-8eaf-ad5df9737783.png">
 
 
+## Questions to Answer 
+
+"What is my "real" peak elo? (after it normalizes)" 
+
+"What are my average number of moves per game in which I win and which I lose?" 
+
+"What percent of the time do I win by timeout vs. win by checkmate. Does this percentage change as my ELO does?"
+
+"What day of the week do I play the most chess?"
+
+"What countries have I played against? Which is the strongest, which is the weakest?" 
+
+"What time of day do I play best? (morning, afternoon, night) 
+
+
 
