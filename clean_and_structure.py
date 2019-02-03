@@ -52,3 +52,7 @@ df['game_result'].value_counts()
 # Grab times only   
 for idx, row in df.iterrows():
     df.loc[idx,'game_time'] = df.loc[idx,'game_time'].split(', ')[2].replace(' PST', '').strip()
+    
+# Save .csv
+df.to_csv(path_or_buf = "/Users/Eric/Desktop/chess scrape/chess_scrape_cleaned.csv")
+
