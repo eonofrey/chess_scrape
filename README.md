@@ -44,6 +44,7 @@ And the result is a datafrae that looks like the one shown below. I concatenate 
 "What day of the week do I play the most chess?"
 
 "What countries have I played against? Which is the strongest, which is the weakest?" 
+<img width="300" alt="screen shot 2019-02-12 at 9 21 56 pm" src="https://user-images.githubusercontent.com/38504767/52682130-57c2ad80-2f0c-11e9-8de9-3b4770b0da4f.png">
 
 "What time of day do I play best? (morning, afternoon, night) 
 
