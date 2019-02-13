@@ -37,6 +37,11 @@ And the result is a datafrae that looks like the one shown below. I concatenate 
 
 #### "What is my "real" peak elo? (after it normalizes)" 
 
+Discarding the first few games where my elo artificially spiked to 1100+, my peak elo is 1074
+
+<img width="300" alt="screen shot 2019-02-12 at 10 59 27 pm" src="https://user-images.githubusercontent.com/38504767/52686029-f0abf580-2f19-11e9-9cf4-371a6ab30701.png">
+
+
 #### "What are my average number of moves per game in which I win and which I lose?" 
 
 #### "What percent of the time do I win by timeout vs. win by checkmate. Does this percentage change as my ELO does?"
