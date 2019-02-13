@@ -35,18 +35,27 @@ And the result is a datafrae that looks like the one shown below. I concatenate 
 
 ## Questions to Answer 
 
-"What is my "real" peak elo? (after it normalizes)" 
+#### "What is my "real" peak elo? (after it normalizes)" 
 
-"What are my average number of moves per game in which I win and which I lose?" 
+#### "What are my average number of moves per game in which I win and which I lose?" 
 
-"What percent of the time do I win by timeout vs. win by checkmate. Does this percentage change as my ELO does?"
+#### "What percent of the time do I win by timeout vs. win by checkmate. Does this percentage change as my ELO does?"
 
-"What day of the week do I play the most chess?"
+#### "What day of the week do I play the most chess?"
 
-"What countries have I played against? Which is the strongest, which is the weakest?" 
-<img width="300" alt="screen shot 2019-02-12 at 9 21 56 pm" src="https://user-images.githubusercontent.com/38504767/52682130-57c2ad80-2f0c-11e9-8de9-3b4770b0da4f.png">
+#### "What countries have I played against? Which is the strongest, which is the weakest?" 
+Countries I've played the most 
+<img width="300" alt="screen shot 2019-02-12 at 9 21 56 pm" src="https://user-images.githubusercontent.com/38504767/52684918-d6701880-2f15-11e9-8c2a-9f8b975bfb80.png">
 
-"What time of day do I play best? (morning, afternoon, night) 
+Those with the highest average elo
+<img width="300" alt="screen shot 2019-02-12 at 10 29 13 pm" src="https://user-images.githubusercontent.com/38504767/52684978-0d462e80-2f16-11e9-8081-e3639fb2122e.png">
+
+
+Those with the lowest average elo
+<img width="300" alt="screen shot 2019-02-12 at 10 29 25 pm" src="https://user-images.githubusercontent.com/38504767/52684994-1cc57780-2f16-11e9-8b81-314bc7bfe48a.png">
+
+
+#### "What time of day do I play best? (morning, afternoon, night) 
 
 
 
