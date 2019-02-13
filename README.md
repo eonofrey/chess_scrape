@@ -44,14 +44,18 @@ And the result is a datafrae that looks like the one shown below. I concatenate 
 #### "What day of the week do I play the most chess?"
 
 #### "What countries have I played against? Which is the strongest, which is the weakest?" 
+
 Countries I've played the most 
+
 <img width="300" alt="screen shot 2019-02-12 at 9 21 56 pm" src="https://user-images.githubusercontent.com/38504767/52684918-d6701880-2f15-11e9-8c2a-9f8b975bfb80.png">
 
 Those with the highest average elo
+
 <img width="300" alt="screen shot 2019-02-12 at 10 29 13 pm" src="https://user-images.githubusercontent.com/38504767/52684978-0d462e80-2f16-11e9-8081-e3639fb2122e.png">
 
 
 Those with the lowest average elo
+
 <img width="300" alt="screen shot 2019-02-12 at 10 29 25 pm" src="https://user-images.githubusercontent.com/38504767/52684994-1cc57780-2f16-11e9-8b81-314bc7bfe48a.png">
 
 
