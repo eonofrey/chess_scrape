@@ -43,6 +43,9 @@ And the result is a datafrae that looks like the one shown below. I concatenate 
 
 #### "What day of the week do I play the most chess?"
 
+Not surprisingly, I play the most chess on the weekends 
+<img width="300" alt="screen shot 2019-02-12 at 10 51 44 pm" src="https://user-images.githubusercontent.com/38504767/52685733-d58cb600-2f18-11e9-90df-f9fca584ef22.png">
+
 #### "What countries have I played against? Which is the strongest, which is the weakest?" 
 
 Countries I've played the most 
