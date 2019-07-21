@@ -42,10 +42,6 @@ Discarding the first few games where my elo artificially spiked to 1100+, my pea
 <img width="300" alt="screen shot 2019-02-12 at 10 59 27 pm" src="https://user-images.githubusercontent.com/38504767/52686029-f0abf580-2f19-11e9-9cf4-371a6ab30701.png">
 
 
-#### "What are my average number of moves per game in which I win and which I lose?" 
-
-#### "What percent of the time do I win by timeout vs. win by checkmate. Does this percentage change as my ELO does?"
-
 #### "What day of the week do I play the most chess?"
 
 Not surprisingly, I play the most chess on the weekends 
@@ -68,7 +64,6 @@ Those with the lowest average elo
 <img width="300" alt="screen shot 2019-02-12 at 10 29 25 pm" src="https://user-images.githubusercontent.com/38504767/52684994-1cc57780-2f16-11e9-8b81-314bc7bfe48a.png">
 
 
-#### "What time of day do I play best? (morning, afternoon, night) 
 
 
 
